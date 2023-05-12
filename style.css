@@ -100,7 +100,7 @@ body {
 .movie-categorie {
     display: flex;
     flex-direction: row;
-    justify-content: space-between;
+    justify-content: space-around;
     width: 420px;
 }
 
@@ -137,5 +137,10 @@ body {
 }
 
 #movie-cast {
+    padding-bottom: 30px;
+}
+
+.error {
+    margin-left: 250px;
     padding-bottom: 30px;
 }

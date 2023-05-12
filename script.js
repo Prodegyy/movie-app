@@ -13,6 +13,7 @@ let movie_information = document.querySelector('.movie-information');
 let movie_plot_class = document.querySelector('.movie-plot');
 let movie_cast_class = document.querySelector('.movie-cast');
 let card = document.querySelector('.card');
+let error = document.querySelector('.error');
 
 
 
@@ -36,7 +37,14 @@ async function getMovieInfos(moviename) {
     console.log(data);
 
     if (data.Response == 'False') {
-        alert('Please enter a movie title!');
+        error.innerHTML = data.Error;
+        card.style.height = '150px';
+
+        error.style.display = 'block';
+        movie_information.style.display = 'none';
+        movie_plot_class.style.display = 'none';
+        movie_cast_class.style.display = 'none';
+
 } else {
     console.log('Success');
 
@@ -55,5 +63,7 @@ async function getMovieInfos(moviename) {
     movie_cast_class.style.display = 'block';
 
     card.style.height = '750px';
+
+    error.style.display = 'none';
     }
 }
